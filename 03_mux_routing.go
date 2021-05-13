@@ -10,7 +10,6 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	/// localhost:80/books/SirensOfTitan/page/42
 	r.HandleFunc("/books/{title}/page/{page}", func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		title := vars["title"]
