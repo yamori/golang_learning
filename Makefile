@@ -13,5 +13,9 @@ hello:
 	go build -o bin/03_mux_routing 03_mux_routing.go
 	./bin/03_mux_routing
 
+04buildrun:
+	go build -o bin/04_mysql_db 04_mysql_db.go
+	./bin/04_mysql_db
+
 clean:
 	rm bin/*
