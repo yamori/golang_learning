@@ -10,8 +10,7 @@ import (
 )
 
 func main() {
-	// sql.Open("mysql", "user:password@/dbname")
-	// sql.Open("mysql", "root:mysecretpw@(127.0.0.1:3306)/root?parseTime=true")
+
 	db, err := sql.Open("mysql", "root:mysecretpw@(127.0.0.1:3306)/root?parseTime=true")
 	if err != nil {
 		log.Fatal(err)

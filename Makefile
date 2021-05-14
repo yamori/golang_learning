@@ -17,5 +17,9 @@ hello:
 	go build -o bin/04_mysql_db 04_mysql_db.go
 	./bin/04_mysql_db
 
+05buildrun:
+	go build -o bin/05_templates 05_templates.go
+	./bin/05_templates
+
 clean:
 	rm bin/*
