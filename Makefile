@@ -25,5 +25,9 @@ hello:
 	go build -o bin/06_assets 06_assets.go
 	./bin/06_assets
 
+07buildrun:
+	go build -o bin/07_forms 07_forms.go
+	./bin/07_forms
+
 clean:
 	rm bin/*

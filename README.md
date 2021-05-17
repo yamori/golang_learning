@@ -41,6 +41,7 @@ make 04buildrun
 
 ## What I Learned
 
+- Forms: `07_forms.go` is a nice example of how compact a GET and matching POST can be for a simple form.  It uses the same method but has different behavior qualifying by `r.Method != http.MethodPost` as the first thing it checks.  Neat.
 - Template and Assets: it's easy enough to inject dynamic values into templates (`template.Execute(w, data)`), and then serve static assets as `fs := http.FileServer(http.Dir("assets/"))`, but the problem is for each asset that's another call to the DB.  For `06_assets.go` I attempted to `embed` a CSS file at compile-time, and use the string value to be injected into the template.  But this results in a value of `ZgotmplZ` which turns out is a special value of GO, that unsafe content had been detected and was substituted.  I did not get far enough into investigating how to escape this, rather I fell back on offering the static asset as first described as a seperate request to the server.  After all, this is a browser's job, but I do wonder what the performance trade-offs would be and I'm sure it would be dependent on the hosting infrastructure/topology.
 - Standalone executable (binary) go apps must be declared with `package main`, otherwise `go install` creates an archive file `*.a`
 - Imports using the blank identifier: `_ "github.com/go-sql-driver/mysql"`.  Imports a package solely for its side-effects (initialization).  Can then be used by a standard library for example `sql.Open("mysql", "root:mysecretpw@(127.0.0.1:3306)/root")`
