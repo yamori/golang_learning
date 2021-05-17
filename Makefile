@@ -21,5 +21,9 @@ hello:
 	go build -o bin/05_templates 05_templates.go
 	./bin/05_templates
 
+06buildrun:
+	go build -o bin/06_assets 06_assets.go
+	./bin/06_assets
+
 clean:
 	rm bin/*
